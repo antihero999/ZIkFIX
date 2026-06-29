@@ -28,7 +28,7 @@ export default function CartDrawer() {
     
     message += "%0APlease let me know the availability and delivery options.";
     
-    window.open(`https://wa.me/2349000000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/2347036722204?text=${message}`, '_blank');
   };
 
   return (

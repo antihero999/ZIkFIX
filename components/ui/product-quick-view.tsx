@@ -591,7 +591,7 @@ export default function ProductQuickView({ product, onClose }: ProductQuickViewP
                     </motion.button>
 
                     <motion.a
-                      href="https://wa.me/2349000000000"
+                      href="https://wa.me/2347036722204"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.03 }}

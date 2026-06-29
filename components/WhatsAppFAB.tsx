@@ -14,7 +14,7 @@ export default function WhatsAppFAB() {
 
   return (
     <motion.a
-      href="https://wa.me/2349000000000?text=Hello%20ZikFix%2C%20I%20need%20help%20with%20a%20repair"
+      href="https://wa.me/2347036722204?text=Hello%20ZikFix%2C%20I%20need%20help%20with%20a%20repair"
       target="_blank"
       rel="noopener noreferrer"
       id="whatsapp-fab"

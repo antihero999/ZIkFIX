@@ -153,7 +153,7 @@ export default function RepairEstimatorSection() {
                     {estimate}
                   </p>
                   <a
-                    href={`https://wa.me/2349000000000?text=Hello%20ZikFix%2C%20I%20used%20the%20estimator.%20I%20have%20a%20${encodeURIComponent(device)}%20with%20a%20${encodeURIComponent(issue)}`}
+                    href={`https://wa.me/2347036722204?text=Hello%20ZikFix%2C%20I%20used%20the%20estimator.%20I%20have%20a%20${encodeURIComponent(device)}%20with%20a%20${encodeURIComponent(issue)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"

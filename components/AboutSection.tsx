@@ -1,6 +1,6 @@
 "use client";
 
-import { InstagramScroll } from "./InstagramScroll";
+import { TiktokScroll } from "./TiktokScroll";
 
 export default function AboutSection() {
   return (
@@ -12,8 +12,7 @@ export default function AboutSection() {
         width: "100%",
       }}
     >
-      <InstagramScroll />
+      <TiktokScroll />
     </section>
   );
 }
-

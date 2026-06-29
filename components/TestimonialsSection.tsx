@@ -207,7 +207,7 @@ export default function TestimonialsSection() {
         ))}
       </motion.div>
 
-      {/* Instagram CTA */}
+      {/* TikTok CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -226,40 +226,25 @@ export default function TestimonialsSection() {
           See more reviews and before/afters
         </p>
         <a
-          href="https://instagram.com/zikfix_stores"
+          href="https://tiktok.com/@zikfix_stores"
           target="_blank"
           rel="noopener noreferrer"
-          id="testimonials-instagram-cta"
+          id="testimonials-tiktok-cta"
           style={{
             display: "inline-flex",
             alignItems: "center",
             gap: 10,
             padding: "13px 28px",
-            background: "linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)",
+            background: "linear-gradient(135deg, #25F4EE 0%, #FE2C55 100%)",
             borderRadius: 9999,
             color: "#fff",
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 600,
-            fontSize: 14,
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(236,72,153,0.35)",
-            transition: "transform 0.2s ease, box-shadow 0.2s ease",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04) translateY(-1px)";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(236,72,153,0.5)";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1) translateY(0)";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(236,72,153,0.35)";
           }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2"/>
-            <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
           </svg>
-          Follow @zikfix_stores
+          <span style={{ fontWeight: 600 }}>Follow @zikfix_stores on TikTok</span>
         </a>
       </motion.div>
 

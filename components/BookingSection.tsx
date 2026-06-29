@@ -226,7 +226,7 @@ export default function BookingSection() {
           {BOOKING_OPTIONS.map((opt) => (
             <motion.a
               key={opt.id}
-              href={`https://wa.me/2349000000000?text=${opt.waMsg}`}
+              href={`https://wa.me/2347036722204?text=${opt.waMsg}`}
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}

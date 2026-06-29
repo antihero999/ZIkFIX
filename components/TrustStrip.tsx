@@ -123,7 +123,7 @@ export default function TrustStrip() {
       >
         Trusted by hundreds of students &amp; professionals across Awka —{" "}
         <a
-          href="https://instagram.com/zikfix_stores"
+          href="https://tiktok.com/@zikfix_stores"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "var(--color-primary-hover)", fontWeight: 500, textDecoration: "none" }}
