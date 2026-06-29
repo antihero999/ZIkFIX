@@ -15,13 +15,10 @@ export default function HeroStatement() {
   return (
     <section
       id="hero-statement"
+      className="px-4 md:px-8 pt-[120px] md:pt-[160px] pb-[80px] md:pb-[100px]"
       style={{
         position: "relative",
         overflow: "hidden",
-        paddingTop: 160,
-        paddingBottom: 100,
-        paddingLeft: 24,
-        paddingRight: 24,
         background: "var(--color-background)",
       }}
     >

@@ -392,8 +392,8 @@ export default function ShopPage() {
                 transition={{ delay: i * 0.15, duration: 0.7 }}
                 whileHover={{ y: -8 }}
                 style={{
-                  flex: "0 0 360px",
-                  minHeight: 500,
+                  flex: "0 0 min(85vw, 360px)",
+                  minHeight: "min(130vw, 500px)",
                   borderRadius: 28,
                   background: product.bgGradient,
                   padding: 32,
@@ -541,7 +541,7 @@ export default function ShopPage() {
             variants={stagger}
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))",
               gap: 20,
             }}
           >
@@ -676,7 +676,7 @@ export default function ShopPage() {
             </h2>
           </motion.div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: 20 }}>
             {/* Hero Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}

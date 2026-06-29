@@ -171,7 +171,7 @@ export default function ServicesSection() {
           viewport={{ once: true, margin: "-40px" }}
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
             gap: 32,
           }}
         >

@@ -240,7 +240,7 @@ export default function ShopSection() {
         viewport={{ once: true, margin: "-40px" }}
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
           gap: 24,
           maxWidth: 1200,
           margin: "0 auto",

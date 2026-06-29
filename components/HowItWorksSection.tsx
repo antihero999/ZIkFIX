@@ -23,9 +23,9 @@ const STEPS = [
 export default function HowItWorksSection() {
   return (
     <section
+      className="py-[80px] md:py-[100px] px-4 md:px-8"
       style={{
         background: "var(--color-background)",
-        padding: "100px 24px",
         position: "relative",
       }}
     >

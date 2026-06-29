@@ -357,7 +357,7 @@ export default function ZikfixHero() {
         <div
           className="sticky top-[72px] w-full overflow-hidden bg-[#0a0a0a] rounded-none md:rounded-3xl"
           style={{
-            height: "calc(100vh - 72px)",
+            height: "calc(100dvh - 72px)",
           }}
         >
           {/* Dot-matrix texture */}

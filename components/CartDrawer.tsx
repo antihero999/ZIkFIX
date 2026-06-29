@@ -3,9 +3,22 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/lib/CartContext";
 import { X, ShoppingBag, Trash2 } from "lucide-react";
+import { useEffect } from "react";
+
 
 export default function CartDrawer() {
   const { items, isCartOpen, setIsCartOpen, removeFromCart, clearCart } = useCart();
+
+  useEffect(() => {
+    if (isCartOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isCartOpen]);
 
   const handleCheckout = () => {
     if (items.length === 0) return;
