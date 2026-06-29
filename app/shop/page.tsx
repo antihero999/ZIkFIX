@@ -30,7 +30,7 @@ const FEATURED_PRODUCTS = [
     price: "₦2,411,789",
     oldPrice: "₦2,800,000",
     badge: "NEW",
-    image: "/iphone mockup.png",
+    image: "https://images.unsplash.com/photo-1632633173522-47456de71b76?q=80&w=800",
     bgGradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     textColor: "#fff",
   },
@@ -549,13 +549,11 @@ export default function ShopPage() {
               <motion.div
                 key={product.id}
                 variants={fadeUp}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -8 }}
+                className="group relative"
                 style={{
-                  background: "#fff",
+                  background: "#f5f5f7",
                   borderRadius: 24,
-                  border: "1px solid rgba(0,0,0,0.06)",
-                  overflow: "hidden",
-                  cursor: "pointer",
                   transition: "box-shadow 0.3s",
                 }}
                 onHoverStart={() => {}}
@@ -600,18 +598,7 @@ export default function ShopPage() {
                       e.stopPropagation();
                       setQuickViewProduct(product);
                     }}
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "rgba(0,0,0,0.4)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      opacity: 0,
-                      transition: "opacity 0.3s",
-                      cursor: "pointer",
-                    }}
-                    className="product-overlay"
+                    className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer z-10"
                   >
                     <span style={{
                       padding: "10px 20px",
@@ -838,12 +825,6 @@ export default function ShopPage() {
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
       />
-
-      {/* Quick View hover CSS */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        .product-overlay { opacity: 0 !important; }
-        div:hover > .product-overlay { opacity: 1 !important; }
-      ` }} />
     </main>
   );
 }
