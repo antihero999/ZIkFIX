@@ -100,13 +100,13 @@ export default function HowItWorksSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative w-full h-[500px] lg:h-full min-h-[400px] rounded-3xl overflow-hidden border border-[var(--color-border-subtle)]"
+            className="relative w-full h-[400px] lg:h-full min-h-[400px] rounded-3xl overflow-hidden flex items-end justify-center"
           >
             <img 
               src="/zikfix man.png" 
               alt="Zikfix Professional" 
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain object-bottom"
             />
           </motion.div>
         </div>
