@@ -39,7 +39,7 @@ const SOCIAL_LINKS = [
   {
     id: "footer-whatsapp",
     label: "WhatsApp",
-    href: "https://wa.me/2349000000000",
+    href: "https://wa.me/2347036722204",
     icon: (
       <svg width="20" height="20" viewBox="0 0 360 362" fill="none">
         <path
@@ -408,7 +408,7 @@ export default function FooterSection() {
               </div>
 
               <a
-                href="https://wa.me/2349000000000"
+                href="https://wa.me/2347036722204"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="footer-whatsapp-cta"
