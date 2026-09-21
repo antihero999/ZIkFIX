@@ -54,15 +54,15 @@ function CharReveal({
     align === "center"
       ? "justify-center text-center"
       : align === "right"
-      ? "justify-end text-right"
-      : "justify-start text-left";
+      ? "justify-center md:justify-end text-center md:text-right"
+      : "justify-center md:justify-start text-center md:text-left";
 
   return (
     <span className={`inline-flex flex-wrap ${justifyClass} w-full`} style={{ gap: "0 0.15em" }}>
       {words.map((word, wordIdx) => (
         <span
           key={wordIdx}
-          className="inline-block whitespace-nowrap"
+          className="inline-block"
           style={{ letterSpacing: "0em" }}
         >
           {word.split("").map((char) => {
@@ -130,29 +130,31 @@ function Beat({
   const accentColor =
     beatIndex === 0 ? "var(--color-accent-gray)" : beatIndex === 1 ? "var(--color-foreground)" : "var(--color-primary-hover)";
 
-  const align = isLeft ? "left" : "right";
-
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none px-4 md:px-8"
+      className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none px-6 md:px-12"
     >
       <div 
-        className="w-full max-w-5xl flex"
-        style={{ justifyContent: isLeft ? 'flex-start' : 'flex-end' }}
+        className={`w-full max-w-5xl flex justify-center ${isLeft ? "md:justify-start" : "md:justify-end"}`}
       >
         {visible && (
-        <div style={{ textAlign: align, maxWidth: 400 }}>
+        <div 
+          className={`w-full max-w-[320px] sm:max-w-[380px] md:max-w-[400px] text-center ${isLeft ? "md:text-left" : "md:text-right"}`}
+          style={{
+            textShadow: "0 2px 16px rgba(0,0,0,0.9)",
+          }}
+        >
           {/* Tiny label */}
           <p
             style={{
               fontFamily: "JetBrains Mono, monospace",
-              fontSize: 9,
+              fontSize: 10,
               letterSpacing: "0.25em",
               color: accentColor,
               textTransform: "uppercase",
-              marginBottom: 12,
-              opacity: 0.7,
+              marginBottom: 10,
+              opacity: 0.85,
             }}
           >
             {beatIndex === 0
@@ -165,14 +167,14 @@ function Beat({
           <h2
             style={{
               fontWeight: 600,
-              fontSize: "clamp(1.3rem, 3.2vw, 2.4rem)",
+              fontSize: "clamp(1.4rem, 4.5vw, 2.4rem)",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
               color: "#ffffff",
               marginBottom: 0,
             }}
           >
-            <CharReveal text={beat.text} triggered={triggered} align={align} />
+            <CharReveal text={beat.text} triggered={triggered} align={isLeft ? "left" : "right"} />
           </h2>
         </div>
         )}
@@ -247,6 +249,7 @@ export default function ZikfixHero() {
     };
     resize();
     window.addEventListener("resize", resize);
+    window.addEventListener("orientationchange", resize);
 
     const drawFrame = () => {
       const raw = smoothProgress.get();
@@ -303,20 +306,31 @@ export default function ZikfixHero() {
       const imgAR = img.naturalWidth / img.naturalHeight;
       const canvasAR = w / h;
       let dw: number, dh: number, dx: number, dy: number;
-      if (canvasAR > imgAR) {
-        dh = h; dw = dh * imgAR;
-        dx = (w - dw) / 2; dy = 0;
+
+      if (canvasAR < 1.0) {
+        // Mobile portrait: scale by height so the exploded phone fills the screen nicely
+        dh = h;
+        dw = dh * imgAR;
+        dx = (w - dw) / 2;
+        dy = (h - dh) / 2;
+      } else if (canvasAR > imgAR) {
+        dh = h;
+        dw = dh * imgAR;
+        dx = (w - dw) / 2;
+        dy = 0;
       } else {
-        dw = w; dh = dw / imgAR;
-        dx = 0; dy = (h - dh) / 2;
+        dw = w;
+        dh = dw / imgAR;
+        dx = 0;
+        dy = (h - dh) / 2;
       }
+
       ctx.drawImage(img, dx, dy, dw, dh);
 
-      // Cover the Gemini watermark baked into the bottom-right of the original image
-      // Assuming the watermark is about 100x100 pixels in the original source image
+      // Cover the watermark baked into the bottom-right of the original image
       const scale = dw / img.naturalWidth;
       const watermarkSize = 120 * scale; 
-      ctx.fillStyle = "#0a0a0a"; // Matches the dark background of the frames
+      ctx.fillStyle = "#0a0a0a";
       ctx.fillRect(
         dx + dw - watermarkSize, 
         dy + dh - watermarkSize, 
@@ -332,6 +346,7 @@ export default function ZikfixHero() {
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("orientationchange", resize);
     };
   }, [smoothProgress]);
 
@@ -355,9 +370,9 @@ export default function ZikfixHero() {
         {/* Sticky viewport — clip & round here, NOT on the scroll container above */}
         {/* Sticks exactly below the 72px navbar */}
         <div
-          className="sticky top-[72px] w-full overflow-hidden bg-[#0a0a0a] rounded-none md:rounded-3xl"
+          className="sticky top-[56px] w-full overflow-hidden bg-[#0a0a0a] rounded-none md:rounded-3xl"
           style={{
-            height: "calc(100dvh - 72px)",
+            height: "calc(100dvh - 56px)",
           }}
         >
           {/* Dot-matrix texture */}

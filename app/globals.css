@@ -252,4 +252,24 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-headline { line-height: 1.0; }
+
+  /* Prevent any horizontal overflow on mobile */
+  body { overflow-x: hidden; }
+
+  /* Scroll indicator respects safe area (iPhone notch / home bar) */
+  .scroll-indicator {
+    bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  }
+
+  /* Trust pills wrap cleanly on small screens */
+  .trust-pill {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* Buttons full-width on very small phones */
+  .btn-primary, .btn-outline {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
 }

@@ -102,7 +102,7 @@ export default function HeroStatement() {
           initial="hidden"
           animate="visible"
           style={{
-            fontSize: "clamp(3.2rem, 9vw, 7.5rem)",
+            fontSize: "clamp(2.2rem, 8vw, 7.5rem)",
             marginBottom: 32,
             maxWidth: 960,
             marginLeft: "auto",
